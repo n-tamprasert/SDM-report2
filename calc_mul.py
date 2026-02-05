@@ -5,11 +5,11 @@ import re
 def calc(A,B):
         ai=str(A)
         bi=str(B)
-        p = re.compile('\d+(\.\d+)?')
-        if p.match(ai) or p.match(bi):
+        p = re.compile('^[1-9][0-9]*$') # Correction:regex to match a positive number (integer only)
+        if p.match(ai) and p.match(bi): # Correction:check if A and B are both match the regex
                 a=float(ai)
                 b=float(bi)
-                if 0<a and a<b and b<1000:
+                if 0<a<1000 and 0<b<1000: # Correction:fixed the conditions for valid inputs
                         valid=True
                 else:
                         valid=False
