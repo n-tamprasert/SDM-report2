@@ -116,4 +116,48 @@ class TestCalc (unittest.TestCase):
     def test_case26(self):
         """A=500, B=-1 -> invalid (negative)"""
         self.assertEqual(-1, calc(500, -1))
+# ========== BOTH A and B are not integer ==========
+    def test_case27(self):
+        """A=None, B=None -> invalid (both null)"""
+        self.assertEqual(-1, calc(None, None))
+    
+    def test_case28(self):
+        """A="", B="" -> invalid (both empty string)"""
+        self.assertEqual(-1, calc("", ""))
+    
+    def test_case29(self):
+        """A=1.5, B=2.7 -> invalid (both float)"""
+        self.assertEqual(-1, calc(1.5, 2.7))
+    
+    def test_case30(self):
+        """A="abc", B="xyz" -> invalid (both string)"""
+        self.assertEqual(-1, calc("abc", "xyz"))
+    
+    def test_case31(self):
+        """A=None, B="" -> invalid (null and empty string)"""
+        self.assertEqual(-1, calc(None, ""))
+    
+    def test_case32(self):
+        """A=1.5, B=None -> invalid (float and null)"""
+        self.assertEqual(-1, calc(1.5, None))
+    
+    def test_case33(self):
+        """A="abc", B=2.7 -> invalid (string and float)"""
+        self.assertEqual(-1, calc("abc", 2.7))
+    
+    def test_case34(self):
+        """A="", B=3.14 -> invalid (empty string and float)"""
+        self.assertEqual(-1, calc("", 3.14))
+    
+    def test_case35(self):
+        """A=None, B="test" -> invalid (null and string)"""
+        self.assertEqual(-1, calc(None, "test"))
+    
+    def test_case36(self):
+        """A=[], B={} -> invalid (list and dict)"""
+        self.assertEqual(-1, calc([], {}))
+    
+    def test_case37(self):
+        """A=True, B=False -> invalid (both boolean)"""
+        self.assertEqual(-1, calc(True, False))
 
