@@ -7,41 +7,41 @@ from calc_mul import calc
 
 class TestCalc (unittest.TestCase):
     # ========== A is less than 1 (Assume B=500) ==========
-    def test_case1(self):
+    def test_case01(self):
         #"""A=0, B=500 -> invalid"""
         self.assertEqual(-1, calc(0, 500))
     
-    def test_case2(self):
+    def test_case02(self):
         #"""A=1, B=500 -> valid (boundary)"""
         self.assertEqual(500, calc(1, 500))
     
-    def test_case3(self):
+    def test_case03(self):
         #"""A=2, B=500 -> valid"""
         self.assertEqual(1000, calc(2, 500))
     
     # ========== A is greater than 999 (Assume B=500) ==========
-    def test_case4(self):
+    def test_case04(self):
         #"""A=998, B=500 -> valid"""
         self.assertEqual(499000, calc(998, 500))
     
-    def test_case5(self):
+    def test_case05(self):
         #"""A=999, B=500 -> valid (boundary)"""
         self.assertEqual(499500, calc(999, 500))
     
-    def test_case6(self):
+    def test_case06(self):
         #"""A=1000, B=500 -> invalid"""
         self.assertEqual(-1, calc(1000, 500))
     
     # ========== B is less than 1 (Assume A=500) ==========
-    def test_case7(self):
+    def test_case07(self):
         #"""A=500, B=0 -> invalid"""
         self.assertEqual(-1, calc(500, 0))
     
-    def test_case8(self):
+    def test_case08(self):
         #"""A=500, B=1 -> valid (boundary)"""
         self.assertEqual(500, calc(500, 1))
     
-    def test_case9(self):
+    def test_case09(self):
         #"""A=500, B=2 -> valid"""
         self.assertEqual(1000, calc(500, 2))
     
